@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  photos: MyString
+  longitude: 9.99
+  latitude: 9.99
+  price_rating: 1
+  worth_it: false
+  mood_type: MyString
+  experience_type: MyString
+  ambience_type: MyString
+
+two:
+  title: MyString
+  photos: MyString
+  longitude: 9.99
+  latitude: 9.99
+  price_rating: 1
+  worth_it: false
+  mood_type: MyString
+  experience_type: MyString
+  ambience_type: MyString
