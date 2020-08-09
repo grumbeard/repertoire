@@ -8,4 +8,8 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def email_required?
+    username.blank?
+  end
 end
