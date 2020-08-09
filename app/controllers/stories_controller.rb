@@ -20,7 +20,20 @@ class StoriesController < ApplicationController
     @story = Story.find_by_id(params[:id])
   end
 
+  private
+
   def story_params
-    params.require(:story).permit(:story_id, :title, :photos, :latitude, :longitude, :price_rating, :worth_it, :mood_type, :experience_type, :ambience_type)
+    params.require(:story).permit(
+      :story_id,
+      :title,
+      :photos,
+      :latitude,
+      :longitude,
+      :price_rating,
+      :worth_it,
+      :mood_type,
+      :experience_type,
+      :ambience_type
+    )
   end
 end
