@@ -1,4 +1,6 @@
 <h1>Edit Story</h1>
 <%= @story.title %>
 
-<%= image_tag("/seed/bbq.jpg", alt: "Story Image") %>
+<% @story.photos.each do |photo_url| %>
+  <%= image_tag "#{photo_url}", alt: "Story Image", width: 300 %>
+<% end %>
