@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root to: 'launch#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :stories
+  resources :stories do
+    resources :tagging, only: [ :create, :index ]
+  end
 end
