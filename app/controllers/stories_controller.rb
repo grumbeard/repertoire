@@ -1,4 +1,6 @@
 class StoriesController < ApplicationController
+  before_action :set_story, only: [:show, :edit, :ratings]
+
   def new
     @story = Story.new
   end
@@ -17,11 +19,12 @@ class StoriesController < ApplicationController
   end
 
   def show
-    @story = Story.find_by_id(params[:id])
   end
 
   def edit
-    @story = Story.find_by_id(params[:id])
+  end
+
+  def ratings
   end
 
   private
@@ -39,5 +42,9 @@ class StoriesController < ApplicationController
       :experience_type,
       :ambience_type
     )
+  end
+
+  def set_story
+    @story = Story.find(params[:id])
   end
 end

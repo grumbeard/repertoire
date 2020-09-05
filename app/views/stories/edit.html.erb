@@ -4,3 +4,6 @@
 <% @story.photos.each do |photo_url| %>
   <%= image_tag "#{photo_url}", alt: "Story Image", width: 300 %>
 <% end %>
+
+<%= link_to "Edit Tagging", story_taggings_path(@story) %>
+<%= link_to "Edit Ratings", ratings_story_path(@story) %>

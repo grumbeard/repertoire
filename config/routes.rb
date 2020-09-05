@@ -6,5 +6,8 @@ Rails.application.routes.draw do
 
   resources :stories do
     resources :taggings, only: [ :create, :index ]
+    member do
+      get :ratings
+    end
   end
 end
