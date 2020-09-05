@@ -1,0 +1,7 @@
+<ul>
+  <% @taggings.each do |tagging| %>
+    <li>
+      <%= tagging.tag.name %>: <%= tagging.tag.tag_category.name %>
+    </li>
+  <% end %>
+</ul>

@@ -1,7 +1,9 @@
 <ul>
   <% @stories.each do |story| %>
     <li>
-      <%= story.title %>
+      <%= link_to story_path(story) do %>
+        <%= story.title %>
+      <% end %>
     </li>
   <% end %>
 </ul>

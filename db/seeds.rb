@@ -12,6 +12,12 @@ puts "Destroyed all users"
 Story.destroy_all
 puts "Destroyed all stories"
 
+Tag.destroy_all
+puts "Destroyed all tags"
+
+TagCategory.destroy_all
+puts "Destroyed all tag categories"
+
 puts "Creating User 'Doodle Bear'"
 doodlebear = User.new(
   username: 'doodlebear',
@@ -109,3 +115,40 @@ steak = Story.new(
   ambience_type: 'Upbeat'
 )
 steak.save
+
+puts "Creating Tag Category 'Mood'"
+mood = TagCategory.new(name: 'Mood')
+mood.save
+
+puts "Creating Tag Category 'Experience'"
+experience = TagCategory.new(name: 'Experience')
+experience.save
+
+puts "Creating Tag Category 'Ambience'"
+ambience = TagCategory.new(name: 'Ambience')
+ambience.save
+
+puts "Creating Tag 'Blissful'"
+blissful = Tag.new(name: 'Blissful', tag_category: mood)
+blissful.save
+
+puts "Creating Tag 'Refreshed'"
+refreshed = Tag.new(name: 'Refreshed', tag_category: experience)
+refreshed.save
+
+puts "Creating Tag 'Chill'"
+chill = Tag.new(name: 'Chill', tag_category: ambience)
+chill.save
+
+puts "Tagging Stories"
+Story.all.each do |story|
+  puts "Tagging Story #{story.title}"
+  Tag.all.each do |tag|
+    tagging = Tagging.new(story: story, tag: tag)
+    if tagging.save
+      puts "Tagged #{tag.name}"
+    else
+      "Failed to tag #{tag.name}"
+    end
+  end
+end

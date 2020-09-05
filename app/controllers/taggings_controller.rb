@@ -1,7 +1,7 @@
 class TaggingsController < ApplicationController
   def index
-    @story = Story.find_by_id(params[:id])
-    @taggings = Tagging.where(story_id: @story.id)
+    @story = Story.find_by_id(params[:story_id])
+    @taggings = Tagging.where(story: @story)
   end
 
   def create
