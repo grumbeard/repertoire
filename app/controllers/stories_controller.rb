@@ -20,6 +20,10 @@ class StoriesController < ApplicationController
     @story = Story.find_by_id(params[:id])
   end
 
+  def edit
+    @story = Story.find_by_id(params[:id])
+  end
+
   private
 
   def story_params

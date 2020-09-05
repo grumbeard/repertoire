@@ -35,7 +35,7 @@ end
 puts "Creating Story 'BBQ'"
 bbq = Story.new(
   title: 'BBQ',
-  photos: 'bbq',
+  photos: ['../assets/images/seed/bbq'],
   latitude: 1.280509,
   longitude: 103.846650,
   price_rating: 2,
@@ -49,7 +49,7 @@ bbq.save
 puts "Creating Story 'Noodles'"
 noodles = Story.new(
   title: 'Noodles',
-  photos: 'noodles',
+  photos: ['../assets/images/seed/noodles'],
   latitude: 1.290509,
   longitude: 102.846650,
   price_rating: 1,
@@ -63,7 +63,7 @@ noodles.save
 puts "Creating Story 'Pancakes'"
 pancakes = Story.new(
   title: 'Pancakes',
-  photos: 'pancakes',
+  photos: ['../assets/images/seed/pancakes'],
   latitude: 1.300509,
   longitude: 101.846650,
   price_rating: 2,
@@ -77,7 +77,7 @@ pancakes.save
 puts "Creating Story 'Pumpkin'"
 pumpkin = Story.new(
   title: 'Pumpkin',
-  photos: 'pumpkin',
+  photos: ['../assets/images/seed/pumpkin'],
   latitude: 1.300509,
   longitude: 101.896650,
   price_rating: 2,
@@ -91,7 +91,7 @@ pumpkin.save
 puts "Creating Story 'Ramen'"
 ramen = Story.new(
   title: 'Ramen',
-  photos: 'ramen',
+  photos: ['../assets/images/seed/ramen'],
   latitude: 1.200509,
   longitude: 101.046650,
   price_rating: 2,
@@ -105,7 +105,7 @@ ramen.save
 puts "Creating Story 'Steak'"
 steak = Story.new(
   title: 'Steak',
-  photos: 'steak',
+  photos: ['../assets/images/seed/steak'],
   latitude: 1.305509,
   longitude: 101.851650,
   price_rating: 3,

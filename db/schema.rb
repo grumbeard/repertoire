@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_05_051952) do
+ActiveRecord::Schema.define(version: 2020_09_05_102106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "stories", force: :cascade do |t|
     t.string "title"
-    t.string "photos"
+    t.string "photos", default: [], array: true
     t.decimal "longitude", precision: 18, scale: 15
     t.decimal "latitude", precision: 18, scale: 15
     t.integer "price_rating"
