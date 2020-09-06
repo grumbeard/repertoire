@@ -28,6 +28,8 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 # Use Devise to manage user authentication
 gem 'devise'
+# Use Cloudinary for Image Hosting
+gem 'cloudinary'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
