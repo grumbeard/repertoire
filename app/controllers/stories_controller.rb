@@ -18,12 +18,6 @@ class StoriesController < ApplicationController
     end
   end
 
-  def show
-  end
-
-  def edit
-  end
-
   def destroy
     @story.destroy
     redirect_to stories_path
@@ -33,9 +27,6 @@ class StoriesController < ApplicationController
     @mood_tags = Tag.where(tag_category: TagCategory.where(name: 'Mood'))
     @feeling_tags = Tag.where(tag_category: TagCategory.where(name: 'Feeling'))
     @ambience_tags = Tag.where(tag_category: TagCategory.where(name: 'Ambience'))
-  end
-
-  def pricing
   end
 
   private
