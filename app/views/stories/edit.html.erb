@@ -1,8 +1,14 @@
 <h1>Edit Story</h1>
 <%= @story.title %>
 
-<% @story.photos.each do |photo_url| %>
-  <%= image_tag "#{photo_url}", alt: "Story Image", width: 300 %>
+<% if @story.photos.attached? %>
+  <% @story.photos.each do |photo| %>
+    <%= cl_image_tag photos.key, height: 300, width: 400, crop: :fill, alt: "Story Image" %>
+  <% end %>
+<% elsif @story.title %>
+  <%= image_tag "https://source.unsplash.com/300x300/?#{@story.title}", alt: "Story Image", width: 300 %>
+<% else %>
+  <%= image_tag "https://source.unsplash.com/collection/8668819/300x400", alt: "Story Image", width: 300 %>
 <% end %>
 
 <%= link_to "Edit Tagging", story_taggings_path(@story) %>

@@ -32,10 +32,11 @@ else
   puts 'Failed to create Doodle Bear'
 end
 
+# image_url_prefix = Rails.root.join('app', 'assets', 'images')
+
 puts "Creating Story 'BBQ'"
 bbq = Story.new(
   title: 'BBQ',
-  photos: ['bbq.jpg'],
   latitude: 1.280509,
   longitude: 103.846650,
   price_rating: 2,
@@ -44,12 +45,12 @@ bbq = Story.new(
   feeling_type: 'Satisfied',
   ambience_type: 'Chill'
 )
+# bbq.photos.attach(io: File.open(image_url_prefix.join('bbq.jpg')), filename: 'bbq.jpg', content_type: 'image/png')
 bbq.save
 
 puts "Creating Story 'Noodles'"
 noodles = Story.new(
   title: 'Noodles',
-  photos: ['noodles.jpg'],
   latitude: 1.290509,
   longitude: 102.846650,
   price_rating: 1,
@@ -58,12 +59,12 @@ noodles = Story.new(
   feeling_type: 'Bloated',
   ambience_type: 'Ordinary'
 )
+# noodles.photos.attach(io: File.open(image_url_prefix.join('noodles.jpg')), filename: 'noodles.jpg', content_type: 'image/png')
 noodles.save
 
 puts "Creating Story 'Pancakes'"
 pancakes = Story.new(
   title: 'Pancakes',
-  photos: ['pancakes.jpg'],
   latitude: 1.300509,
   longitude: 101.846650,
   price_rating: 2,
@@ -72,12 +73,12 @@ pancakes = Story.new(
   feeling_type: 'Refreshed',
   ambience_type: 'Calming'
 )
+# pancakes.photos.attach(io: File.open(image_url_prefix.join('pancakes.jpg')), filename: 'pancakes.jpg', content_type: 'image/png')
 pancakes.save
 
 puts "Creating Story 'Pumpkin'"
 pumpkin = Story.new(
   title: 'Pumpkin',
-  photos: ['pumpkin.jpg'],
   latitude: 1.300509,
   longitude: 101.896650,
   price_rating: 2,
@@ -86,12 +87,12 @@ pumpkin = Story.new(
   feeling_type: 'Satisfied',
   ambience_type: 'Classy'
 )
+# pumpkin.photos.attach(io: File.open(image_url_prefix.join('pumpkin_soup.jpg')), filename: 'pumpkin.jpg', content_type: 'image/png')
 pumpkin.save
 
 puts "Creating Story 'Ramen'"
 ramen = Story.new(
   title: 'Ramen',
-  photos: ['ramen.jpg'],
   latitude: 1.200509,
   longitude: 101.046650,
   price_rating: 2,
@@ -100,12 +101,12 @@ ramen = Story.new(
   feeling_type: 'Bloated',
   ambience_type: 'Homely'
 )
+# ramen.photos.attach(io: File.open(image_url_prefix.join('ramen.jpg')), filename: 'ramen.jpg', content_type: 'image/png')
 ramen.save
 
 puts "Creating Story 'Steak'"
 steak = Story.new(
   title: 'Steak',
-  photos: ['steak.jpg'],
   latitude: 1.305509,
   longitude: 101.851650,
   price_rating: 3,
@@ -114,6 +115,7 @@ steak = Story.new(
   feeling_type: 'Victorious',
   ambience_type: 'Upbeat'
 )
+# steak.photos.attach(io: File.open(image_url_prefix.join('steak.jpg')), filename: 'steak.jpg', content_type: 'image/png')
 steak.save
 
 puts "Creating Tag Category 'Mood'"

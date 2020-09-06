@@ -35,7 +35,7 @@ class StoriesController < ApplicationController
     params.require(:story).permit(
       :story_id,
       :title,
-      :photos,
+      :photo,
       :latitude,
       :longitude,
       :price_rating,

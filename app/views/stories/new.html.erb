@@ -8,9 +8,9 @@
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "title" } %>
-    <%= f.input :photos,
+    <%= f.input :photo, as: :file,
                 required: false,
-                input_html: { autocomplete: "photos" } %>
+                input_html: { autocomplete: "photo" } %>
     <%= f.input :latitude,
                 required: false,
                 input_html: { autocomplete: "latitude" }%>
