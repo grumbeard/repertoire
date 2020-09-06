@@ -15,3 +15,11 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import { getLocation } from '../pages/story';
+import { setLocation } from '../pages/story';
+import { displayError } from '../pages/story';
+
+
+const photo_upload_button = document.getElementById('story_photo');
+if (photo_upload_button !== null) { getLocation(); }

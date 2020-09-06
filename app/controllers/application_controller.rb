@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(users)
     # Add Start path
     flash[:notice] = 'Signed in successfully.'
-    new_story_path
+    root_path
   end
 
   def configure_permitted_parameters
