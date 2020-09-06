@@ -1,3 +1,21 @@
 <h1><%= @story.title %></h1>
-<%= @story.price_rating %>
-<%= @story.worth_it %>
+<%= @story.mood_type %>
+<%= @story.feeling_type %>
+<%= @story.ambience_type %>
+<br />
+<h2>Moods</h2>
+<% @mood_tags.each do |mood| %>
+  <%= mood.name %>
+<% end %>
+<br />
+<h2>Feelings</h2>
+<% @feeling_tags.each do |feeling| %>
+  <%= feeling.name %>
+<% end %>
+<br />
+<h2>Ambience</h2>
+<% @ambience_tags.each do |ambience| %>
+  <%= ambience.name %>
+<% end %>
+
+<%= link_to 'Next', pricing_story_path(@story) %>
