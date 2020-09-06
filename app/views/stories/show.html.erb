@@ -2,3 +2,7 @@
 
 <%= @story.title %>
 <%= link_to 'Edit Story', edit_story_path(@story) %>
+<%= link_to "Delete",
+  story_path(@story),
+  method: :delete,
+  data: { confirm: "Are you sure?" } %>

@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  before_action :set_story, only: [:show, :edit, :ratings]
+  before_action :set_story, only: [:show, :edit, :destroy, :ratings]
 
   def new
     @story = Story.new
@@ -22,6 +22,11 @@ class StoriesController < ApplicationController
   end
 
   def edit
+  end
+
+  def destroy
+    @story.destroy
+    redirect_to stories_path
   end
 
   def ratings
