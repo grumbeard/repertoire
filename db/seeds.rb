@@ -41,7 +41,7 @@ bbq = Story.new(
   price_rating: 2,
   worth_it: true,
   mood_type: 'Adventurous',
-  experience_type: 'Satisfied',
+  feeling_type: 'Satisfied',
   ambience_type: 'Chill'
 )
 bbq.save
@@ -55,7 +55,7 @@ noodles = Story.new(
   price_rating: 1,
   worth_it: false,
   mood_type: 'Content',
-  experience_type: 'Bloated',
+  feeling_type: 'Bloated',
   ambience_type: 'Ordinary'
 )
 noodles.save
@@ -69,7 +69,7 @@ pancakes = Story.new(
   price_rating: 2,
   worth_it: false,
   mood_type: 'Exhausted',
-  experience_type: 'Refreshed',
+  feeling_type: 'Refreshed',
   ambience_type: 'Calming'
 )
 pancakes.save
@@ -83,7 +83,7 @@ pumpkin = Story.new(
   price_rating: 2,
   worth_it: true,
   mood_type: 'Blissful',
-  experience_type: 'Satisfied',
+  feeling_type: 'Satisfied',
   ambience_type: 'Classy'
 )
 pumpkin.save
@@ -97,7 +97,7 @@ ramen = Story.new(
   price_rating: 2,
   worth_it: true,
   mood_type: 'Content',
-  experience_type: 'Bloated',
+  feeling_type: 'Bloated',
   ambience_type: 'Homely'
 )
 ramen.save
@@ -111,7 +111,7 @@ steak = Story.new(
   price_rating: 3,
   worth_it: true,
   mood_type: 'Blissful',
-  experience_type: 'Victorious',
+  feeling_type: 'Victorious',
   ambience_type: 'Upbeat'
 )
 steak.save
@@ -120,9 +120,9 @@ puts "Creating Tag Category 'Mood'"
 mood = TagCategory.new(name: 'Mood')
 mood.save
 
-puts "Creating Tag Category 'Experience'"
-experience = TagCategory.new(name: 'Experience')
-experience.save
+puts "Creating Tag Category 'Feeling'"
+feeling = TagCategory.new(name: 'Feeling')
+feeling.save
 
 puts "Creating Tag Category 'Ambience'"
 ambience = TagCategory.new(name: 'Ambience')
@@ -133,7 +133,7 @@ blissful = Tag.new(name: 'Blissful', tag_category: mood)
 blissful.save
 
 puts "Creating Tag 'Refreshed'"
-refreshed = Tag.new(name: 'Refreshed', tag_category: experience)
+refreshed = Tag.new(name: 'Refreshed', tag_category: feeling)
 refreshed.save
 
 puts "Creating Tag 'Chill'"

@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  before_action :set_story, only: [:show, :edit, :destroy, :ratings]
+  before_action :set_story, only: [:show, :edit, :destroy, :experience, :pricing]
 
   def new
     @story = Story.new
@@ -29,7 +29,13 @@ class StoriesController < ApplicationController
     redirect_to stories_path
   end
 
-  def ratings
+  def experience
+    @mood_tags = Tag.where(tag_category: TagCategory.where(name: 'Mood'))
+    @feeling_tags = Tag.where(tag_category: TagCategory.where(name: 'Feeling'))
+    @ambience_tags = Tag.where(tag_category: TagCategory.where(name: 'Ambience'))
+  end
+
+  def pricing
   end
 
   private
