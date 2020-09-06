@@ -1,5 +1,5 @@
 const getLocation = ()=> {
-  const photo_upload_button = document.getElementById('story_photo');
+  const photo_upload_button = document.getElementById('story_photos');
   if (photo_upload_button) {
     photo_upload_button.addEventListener('click', () => {
       console.log('Photo Upload Button clicked');

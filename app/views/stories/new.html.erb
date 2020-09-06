@@ -3,13 +3,16 @@
 <%= simple_form_for(@story) do |f| %>
   <%= f.error_notification %>
 
-    <%= f.input :photo, as: :file,
+    <%= f.input :photos,
+                as: :file,
                 required: true,
-                input_html: { autocomplete: "photo" } %>
-    <%= f.input :latitude, as: :hidden,
+                input_html: { autocomplete: "photo", multiple: true } %>
+    <%= f.input :latitude,
+                as: :hidden,
                 required: false,
                 input_html: { autocomplete: "latitude" }%>
-    <%= f.input :longitude, as: :hidden,
+    <%= f.input :longitude,
+                as: :hidden,
                 required: false,
                 input_html: { autocomplete: "longitude" } %>
     <p id='geolocation_notice'>(Geolocation will be captured automatically)</p>

@@ -33,16 +33,15 @@ class StoriesController < ApplicationController
 
   def story_params
     params.require(:story).permit(
-      :story_id,
       :title,
-      :photo,
       :latitude,
       :longitude,
       :price_rating,
       :worth_it,
       :mood_type,
       :experience_type,
-      :ambience_type
+      :ambience_type,
+      photos: []
     )
   end
 

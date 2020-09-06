@@ -21,5 +21,5 @@ import { setLocation } from '../pages/story';
 import { displayError } from '../pages/story';
 
 
-const photo_upload_button = document.getElementById('story_photo');
+const photo_upload_button = document.getElementById('story_photos');
 if (photo_upload_button !== null) { getLocation(); }
