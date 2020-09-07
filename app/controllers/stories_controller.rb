@@ -11,6 +11,17 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
+
+    #Use Geocoder to autotag location info
+    results = Geocoder.search([@story.latitude, @story.longitude])
+    address_details << results.first.street if results.first.street
+    address_details << results.first.neighbourhood if results.first.neighbourhood
+    address_details << results.first.suburb if results.first.suburb
+    address_details.each do |value|
+      "Tagging with Location: #{value}"
+      tag = Tag.new(name: value, tag_category: location) unless Tag.where(name: value).present?
+      tag.save if tag
+    end
     if @story.save
       redirect_to story_path(@story)
     else

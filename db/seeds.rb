@@ -51,8 +51,8 @@ bbq.save
 puts "Creating Story 'Noodles'"
 noodles = Story.new(
   title: 'Noodles',
-  latitude: 1.290509,
-  longitude: 102.846650,
+  latitude: 1.390509,
+  longitude: 114.846650,
   price_rating: 1,
   worth_it: false,
   mood_type: 'Content',
@@ -65,8 +65,8 @@ noodles.save
 puts "Creating Story 'Pancakes'"
 pancakes = Story.new(
   title: 'Pancakes',
-  latitude: 1.300509,
-  longitude: 101.846650,
+  latitude: 1.2828473,
+  longitude: 103.8493041,
   price_rating: 2,
   worth_it: false,
   mood_type: 'Exhausted',
@@ -79,8 +79,8 @@ pancakes.save
 puts "Creating Story 'Pumpkin'"
 pumpkin = Story.new(
   title: 'Pumpkin',
-  latitude: 1.300509,
-  longitude: 101.896650,
+  latitude: 1.2889762,
+  longitude: 103.8468694,
   price_rating: 2,
   worth_it: true,
   mood_type: 'Blissful',
@@ -93,8 +93,8 @@ pumpkin.save
 puts "Creating Story 'Ramen'"
 ramen = Story.new(
   title: 'Ramen',
-  latitude: 1.200509,
-  longitude: 101.046650,
+  latitude: 1.2798245,
+  longitude: 103.8476457,
   price_rating: 2,
   worth_it: true,
   mood_type: 'Content',
@@ -107,8 +107,8 @@ ramen.save
 puts "Creating Story 'Steak'"
 steak = Story.new(
   title: 'Steak',
-  latitude: 1.305509,
-  longitude: 101.851650,
+  latitude: 1.2923514,
+  longitude: 103.8586837,
   price_rating: 3,
   worth_it: true,
   mood_type: 'Blissful',
@@ -117,6 +117,10 @@ steak = Story.new(
 )
 # steak.photos.attach(io: File.open(image_url_prefix.join('steak.jpg')), filename: 'steak.jpg', content_type: 'image/png')
 steak.save
+
+puts "Creating Tag Category 'Location'"
+location = TagCategory.new(name: 'Location')
+location.save
 
 puts "Creating Tag Category 'Mood'"
 mood = TagCategory.new(name: 'Mood')
@@ -153,4 +157,27 @@ Story.all.each do |story|
       "Failed to tag #{tag.name}"
     end
   end
+end
+
+puts "Geocode Stories"
+address_details = []
+Story.all.each do |story|
+  puts "Geocoding #{story.title}"
+  results = Geocoder.search([story.latitude, story.longitude])
+  story.address = results.first.address
+  address_details << results.first.street if results.first.street
+  address_details << results.first.neighbourhood if results.first.neighbourhood
+  address_details << results.first.suburb if results.first.suburb
+  address_details.each do |value|
+    "Tagging with Location: #{value}"
+    tag = Tag.new(name: value, tag_category: location) unless Tag.where(name: value).present?
+    if tag
+      tag.save
+      puts "Tagged #{tag.name}"
+      sleep(1)
+    else
+      puts "Failed to tag #{value}"
+    end
+  end
+  sleep(1)
 end
