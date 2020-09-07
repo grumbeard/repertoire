@@ -30,6 +30,8 @@ gem 'font-awesome-sass'
 gem 'devise'
 # Use Cloudinary for Image Hosting
 gem 'cloudinary'
+#User Geocoder for forward / reverse geocoding
+gem 'geocoder'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
