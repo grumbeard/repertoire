@@ -1,1 +1,39 @@
 @import "bootstrap/scss/bootstrap";
+@import './reset';
+@import './buttons';
+
+// MIXINS
+@mixin flexAndCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  line-height: 1;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+footer {
+  align-self: flex-end;
+  height: 3rem;
+  width: 100%;
+}
+
+
+.container__full-height {
+  height: 100%;
+  width: 100%;
+  @include flexAndCenter(column);
+}
+
+.container__contents {
+  height: 100%;
+  overflow: auto;
+}

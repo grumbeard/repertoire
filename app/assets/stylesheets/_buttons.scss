@@ -1,0 +1,26 @@
+.button-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 10%;
+  height: 3rem;
+}
+
+.button {
+  height: 2rem;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: white;
+}
+
+.button__left {
+  margin-right: 1rem;
+  background-color: pink;
+}
+
+.button__right {
+  margin-left: 1rem;
+  background-color: orange;
+}

@@ -1,3 +1,4 @@
+<div class="container__contents">
 <h1>This Story</h1>
 
 <%= @story.title %>
@@ -6,3 +7,14 @@
   story_path(@story),
   method: :delete,
   data: { confirm: "Are you sure?" } %>
+</div>
+
+<footer>
+  <div class="button-container">
+    <%= link_to 'Edit Story', edit_story_path(@story), class: 'button button__left' %>
+    <%= link_to "Delete",
+  story_path(@story),
+  method: :delete,
+  data: { confirm: "Are you sure?" }, class: 'button button__right' %>
+  </div>
+</footer>
