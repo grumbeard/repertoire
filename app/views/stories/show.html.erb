@@ -1,12 +1,32 @@
 <div class="container__contents">
-<h1>This Story</h1>
+  <h1>This Story</h1>
 
-<%= @story.title %>
-<%= link_to 'Edit Story', edit_story_path(@story) %>
-<%= link_to "Delete",
-  story_path(@story),
-  method: :delete,
-  data: { confirm: "Are you sure?" } %>
+  <section class="photo-carousel container__three-quart-height">
+    <% if @story.photos.attached? %>
+      <% @story.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 400, width: 300, crop: :fill, alt: "Story Image" %>
+      <% end %>
+    <% elsif @story.title %>
+      <%= image_tag "https://source.unsplash.com/300x400/?#{@story.title}", alt: "Story Image", width: 300 %>
+    <% else %>
+      <%= image_tag "https://source.unsplash.com/collection/4656528/300x400", alt: "Story Image", width: 300 %>
+    <% end %>
+  </section>
+
+  <section class="story-info">
+    <div class="story-info__description">
+      <div class="story-into__description--title">
+        <%= @story.title %>
+      </div>
+      <div class="story-info__description--tag-list">
+        <%= render 'shared/tag-list' %>
+      </div>
+    </div>
+
+    <div class="story-info__price-rating">
+      <%= render 'shared/pricing' %>
+    </div>
+  </section>
 </div>
 
 <footer>

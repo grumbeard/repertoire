@@ -1,6 +1,7 @@
 @import "bootstrap/scss/bootstrap";
 @import './reset';
 @import './buttons';
+@import './stories';
 
 // MIXINS
 @mixin flexAndCenter($direction) {
@@ -31,6 +32,14 @@ footer {
   height: 100%;
   width: 100%;
   @include flexAndCenter(column);
+}
+
+.container__three-quart-height {
+  height: 75%;
+}
+
+.container__one-quart-height {
+  height: 20%;
 }
 
 .container__contents {

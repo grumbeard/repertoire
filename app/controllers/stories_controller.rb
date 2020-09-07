@@ -29,6 +29,10 @@ class StoriesController < ApplicationController
     end
   end
 
+  def show
+    @taggings = Tagging.where(story: @story)
+  end
+
   def destroy
     @story.destroy
     redirect_to stories_path
