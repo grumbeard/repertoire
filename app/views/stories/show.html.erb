@@ -1,8 +1,31 @@
-<h1>This Story</h1>
+<div class="container__contents">
+  <section class="photo-carousel container__three-quart-height">
+    <%= render 'shared/photos' %>
+  </section>
 
-<%= @story.title %>
-<%= link_to 'Edit Story', edit_story_path(@story) %>
-<%= link_to "Delete",
+  <section class="story-info">
+    <div class="story-info__description">
+      <div class="story-into__description--title">
+        <%= render 'shared/story-title' %>
+      </div>
+      <div class="story-info__description--tag-list">
+        <%= render 'shared/tag-list' %>
+      </div>
+    </div>
+
+    <div class="story-info__price-rating">
+      <%= render 'shared/pricing' %>
+      <%= render 'shared/worth_it' %>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="button-container">
+    <%= link_to 'Edit Story', edit_story_path(@story), class: 'button button__edit button__left' %>
+    <%= link_to "Delete",
   story_path(@story),
   method: :delete,
-  data: { confirm: "Are you sure?" } %>
+  data: { confirm: "Are you sure?" }, class: 'button button__delete button__right' %>
+  </div>
+</footer>
