@@ -1,5 +1,8 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :destroy, :experience, :pricing]
+  before_action :set_experience_taggings, only: [:show]
+  # before_action :set_location_taggings, only: [:show]
+  before_action :set_other_taggings, only: [:show]
 
   def new
     @story = Story.new
@@ -30,7 +33,7 @@ class StoriesController < ApplicationController
   end
 
   def show
-    @taggings = Tagging.where(story: @story)
+    @location_taggings = Tagging.where({story: @story, tag: Tag.where(tag_category: TagCategory.where(name: 'Location'))})
   end
 
   def destroy
@@ -62,5 +65,19 @@ class StoriesController < ApplicationController
 
   def set_story
     @story = Story.find(params[:id])
+  end
+
+  def set_experience_taggings
+    @mood_taggings = Tagging.where({story: @story, tag: Tag.where(tag_category: TagCategory.where(name: 'Mood'))})
+    @feeling_taggings = Tagging.where({story: @story, tag: Tag.where(tag_category: TagCategory.where(name: 'Feeling'))})
+    @ambience_taggings = Tagging.where({story: @story, tag: Tag.where(tag_category: TagCategory.where(name: 'Ambience'))})
+  end
+
+  def set_location_taggings
+    @location_taggings = Tagging.where({story: @story, tag: Tag.where(tag_category: TagCategory.where(name: 'Location'))})
+  end
+
+  def set_other_taggings
+    @other_taggings = Tagging.where({story: @story, tag: Tag.where(tag_category: TagCategory.where(name: 'Other'))})
   end
 end

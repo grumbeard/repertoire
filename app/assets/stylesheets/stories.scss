@@ -5,16 +5,39 @@
 .photo-carousel {
   padding-top: 10%;
   text-align: center;
+}
+
+.photo-container {
+  background-color: darken($base, 3%);
+  padding: 0 5vw;
+  border-radius: 4px;
   img {
-    height: 100%;
+    width: 65vw;
+    height: 60vh;
+    object-fit: contain;
+    overflow: hidden;
+    border-radius: 4px;
   }
 }
 
 .story-info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
   padding-top: 10%;
+}
+
+.story-info__title {
+  grid-column: 1 / span 3
+}
+
+.story-info__tag-list {
+  grid-column: 1 / span 2;
+}
+
+.story-info__price-rating {
+  grid-column: 3;
+  text-align: center;
 }
 
 .price__true {
@@ -22,20 +45,34 @@
 }
 
 .price__false {
-  color: $light-grey;
+  color: $text-alt;
 }
 
 .worth-it__true, .worth-it__false {
   margin: 0.5rem 0;
   padding: 0.1rem 1rem;
-  color: $text-dark;
+  color: $text-alt;
   text-align: center;
+  // font-size: 0.6rem
 }
 
 .worth-it__true {
-  background-color: $light-yellow;
+  background-color: $light-yellow;;
+  color: $text-main;
 }
 
 .worth-it__false {
-  background-color: $light-grey;
+  background-color: $dark-grey;
+  text-decoration: line-through;
+}
+
+// CAROUSEL
+.carousel-nav {}
+
+.js-carousel-btn {
+  width: 1rem;
+  height: 1rem;
+  background-color: rgba(189, 187, 136, 0.7);
+  border-radius: 50%;
+  margin: 0 5px;
 }

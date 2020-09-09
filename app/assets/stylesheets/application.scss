@@ -3,6 +3,7 @@
 @import './config';
 @import './buttons';
 @import './stories';
+@import './tagging';
 
 // MIXINS
 @mixin flexAndCenter($direction) {
@@ -19,7 +20,7 @@ body {
   background-color: $base;
   font-family: $base-font;
   font-weight: $normal;
-  color: $text-light;
+  color: $text-main;
 }
 
 a, a:hover {
@@ -38,6 +39,10 @@ a {
 h1, h2, h3 {
   font-family: $header-font;
   font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
 }
 
 footer {

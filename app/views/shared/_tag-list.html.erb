@@ -1,7 +1,36 @@
+<!-- Experience Tags -->
 <ul>
-  <% @taggings.each do |tagging| %>
-    <li>
-      <%= tagging.tag.tag_category.name %>: <%= tagging.tag.name %>
+  <% @mood_taggings.each do |tagging| %>
+    <li class='tag tag__experience'>
+      <%= tagging.tag.name %>
+    </li>
+  <% end %>
+  <% @feeling_taggings.each do |tagging| %>
+    <li class='tag tag__experience'>
+      <%= tagging.tag.name %>
+    </li>
+  <% end %>
+  <% @ambience_taggings.each do |tagging| %>
+    <li class='tag tag__experience'>
+      <%= tagging.tag.name %>
+    </li>
+  <% end %>
+</ul>
+
+<!-- Location Tags -->
+<ul>
+  <% @location_taggings.each do |tagging| %>
+    <li class='tag tag__location'>
+      <%= tagging.tag.name %>
+    </li>
+  <% end %>
+</ul>
+
+<!-- Other Tags -->
+<ul>
+  <% @other_taggings.each do |tagging| %>
+    <li class='tag tag__experience'>
+      <%= tagging.tag.name %>
     </li>
   <% end %>
 </ul>

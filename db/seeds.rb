@@ -159,22 +159,33 @@ Story.all.each do |story|
   end
 end
 
-puts "Geocode Stories"
-address_details = []
+puts "Geocoding Stories..."
 Story.all.each do |story|
+  address_details = []
   puts "Geocoding #{story.title}"
   results = Geocoder.search([story.latitude, story.longitude])
-  story.address = results.first.address
-  address_details << results.first.street if results.first.street
-  address_details << results.first.neighbourhood if results.first.neighbourhood
-  address_details << results.first.suburb if results.first.suburb
+  if results.present?
+    story.address = results.first.address
+    address_details << results.first.street if results.first.street
+    address_details << results.first.neighbourhood if results.first.neighbourhood
+    address_details << results.first.suburb if results.first.suburb
+  end
+
+  puts "Tagging Location to Stories..."
   address_details.each do |value|
-    "Tagging with Location: #{value}"
+    puts "Adding Tags with Location: #{value}"
     tag = Tag.new(name: value, tag_category: location) unless Tag.where(name: value).present?
     if tag
       tag.save
-      puts "Tagged #{tag.name}"
+      puts "Added tag #{tag.name}"
       sleep(1)
+    else
+      puts "Failed to add tag #{value}"
+    end
+    puts "Tagging #{value} to #{story.title}"
+    tagging = Tagging.new(story: story, tag: Tag.where(name: value).first)
+    if tagging.save
+      puts "Tagged #{value}"
     else
       puts "Failed to tag #{value}"
     end

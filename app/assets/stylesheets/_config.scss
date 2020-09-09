@@ -2,35 +2,39 @@
 
 // COLOURS
 $dark-grey: #94A2AB;
-$light-grey: #E0E7EC;
+$grey: #E0E7EC;
+$light-grey: #F3F5F8;
 $dark-purple: #6D6875;
 $purple: #967AA1;
 $light-purple: #AA94B3;
 $yellow: #FFE95C;
 $light-yellow: #FFF3A4;
+$dark-blue: #478BFF;
 $blue: #649DFF;
 $light-blue: #72A6FF;
 $beige: #FFD9C4;
 $light-beige: #FFF2EB;
+$dark-beige: #FFBD99;
 $orange: #F54B23;
 $light-orange: #F76E50;
+$dark-orange: #EA340B;
 $green: #00CC99;
 
 // COLOUR SETTINGS
-$base: $dark-purple;
-$text-light: $light-grey;
-$text-dark: $dark-grey;
+$base: $light-grey;
+$text-alt: $white;
+$text-main: $dark-grey;
 $link: $purple;
-$link-hover: $light-purple;
+$link-hover: $dark-purple;
 $edit: $beige;
-$edit-hover: $light-beige;
+$edit-hover: $dark-beige;
 $delete: $orange;
-$delete-hover: $light-orange;
+$delete-hover: $dark-orange;
 $confirm: $blue;
-$confirm-hover: $light-blue;
+$confirm-hover: $dark-blue;
 
 // FONT SETTINGS
-$header-font: 'Balsamiq Sans', cursive;
-$base-font: 'Roboto', sans-serif;
+$header-font: 'Roboto', sans-serif;
+$base-font: 'Balsamiq Sans', cursive;
 $normal: 400;
 $bold: 700;
