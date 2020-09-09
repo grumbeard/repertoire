@@ -1,5 +1,6 @@
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/bootstrap';
 @import './reset';
+@import './config';
 @import './buttons';
 @import './stories';
 
@@ -15,10 +16,28 @@ body {
   height: 100vh;
   width: 100vw;
   line-height: 1;
+  background-color: $base;
+  font-family: $base-font;
+  font-weight: $normal;
+  color: $text-light;
 }
 
 a, a:hover {
   text-decoration: none;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+  &:hover {
+    color: $link-hover;
+    text-decoration: none;
+  }
+}
+
+h1, h2, h3 {
+  font-family: $header-font;
+  font-weight: bold;
 }
 
 footer {
@@ -35,14 +54,13 @@ footer {
 }
 
 .container__three-quart-height {
-  height: 75%;
+  height: 65vh;
 }
 
 .container__one-quart-height {
-  height: 20%;
+  height: 20vh;
 }
 
 .container__contents {
-  height: 100%;
   overflow: auto;
 }

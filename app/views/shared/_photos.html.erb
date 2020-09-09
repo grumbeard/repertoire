@@ -1,0 +1,9 @@
+<% if @story.photos.attached? %>
+  <% @story.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 400, width: 300, crop: :fill, alt: "Story Image" %>
+  <% end %>
+<% elsif @story.title %>
+  <%= image_tag "https://source.unsplash.com/300x400/?#{@story.title}", alt: "Story Image" %>
+<% else %>
+  <%= image_tag "https://source.unsplash.com/collection/4656528/300x400", alt: "Story Image" %>
+<% end %>
