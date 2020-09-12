@@ -2,16 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.photo-carousel {
-  padding-top: 10%;
-  text-align: center;
+// STORY CARD
+.story-cards-container {
+  width: 100vw;
+  padding: 10% 5vw;
+  // Define Grid
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  @include tablet(4);
+  @include desktop(6);
 }
+
+.story-card {
+  grid-column: 1fr;
+  padding: 5%;
+  .story-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+}
+
+// STORY PHOTO
 
 .photo-container {
   background-color: darken($base, 3%);
-  padding: 0 5vw;
   border-radius: 4px;
-  img {
+  padding: 0 5vw;
+  .story-image {
     width: 65vw;
     height: 60vh;
     object-fit: contain;
@@ -20,6 +39,8 @@
   }
 }
 
+// STORY DESCRIPTION
+
 .story-info {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -27,13 +48,19 @@
   padding-top: 10%;
 }
 
+// STORY DESCRIPTION -- TITLE
+
 .story-info__title {
   grid-column: 1 / span 3
 }
 
+// STORY DESCRIPTION -- TAGS
+
 .story-info__tag-list {
   grid-column: 1 / span 2;
 }
+
+// STORY DESCRIPTION -- PRICING
 
 .story-info__price-rating {
   grid-column: 3;
@@ -67,6 +94,12 @@
 }
 
 // CAROUSEL
+
+.photo-carousel {
+  padding-top: 10%;
+  text-align: center;
+}
+
 .carousel-nav {}
 
 .js-carousel-btn {

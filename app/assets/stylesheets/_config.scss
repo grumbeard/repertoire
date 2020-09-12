@@ -22,7 +22,7 @@ $green: #00CC99;
 
 // COLOUR SETTINGS
 $base: $light-grey;
-$text-alt: $white;
+$text-alt: white;
 $text-main: $dark-grey;
 $link: $purple;
 $link-hover: $dark-purple;
@@ -38,3 +38,27 @@ $header-font: 'Roboto', sans-serif;
 $base-font: 'Balsamiq Sans', cursive;
 $normal: 400;
 $bold: 700;
+
+// MEDIA QUERY SETTINGS
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+// MIXINS
+@mixin flexAndCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin tablet($col-num) {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    grid-template-columns: repeat($col-num, 1fr);
+  }
+}
+
+@mixin desktop($col-num) {
+  @media (min-width: #{$desktop-width}) {
+    grid-template-columns: repeat($col-num, 1fr);
+  }
+}

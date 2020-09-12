@@ -1,9 +1,9 @@
 <% if @story.photos.attached? %>
   <% @story.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 400, width: 280, crop: :fill, alt: "Story Image" %>
+    <%= cl_image_tag photo.key, height: 400, width: 280, crop: :fill, alt: "Story Image", class: "story-image" %>
   <% end %>
 <% elsif @story.title %>
-  <%= image_tag "https://source.unsplash.com/featured/?#{@story.title},portrait", alt: "Story Image" %>
+  <%= image_tag "https://source.unsplash.com/featured/?#{@story.title},portrait", alt: "Story Image", class: "story-image" %>
 <% else %>
-  <%= image_tag "https://source.unsplash.com/collection/4656528/", alt: "Story Image" %>
+  <%= image_tag "https://source.unsplash.com/collection/4656528/", alt: "Story Image", class: "story-image" %>
 <% end %>

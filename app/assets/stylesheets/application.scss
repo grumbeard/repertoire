@@ -1,17 +1,11 @@
-@import 'bootstrap/scss/bootstrap';
+// @import 'bootstrap/scss/bootstrap';
 @import './reset';
 @import './config';
 @import './buttons';
 @import './stories';
 @import './tagging';
+@import './cards';
 
-// MIXINS
-@mixin flexAndCenter($direction) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: center;
-  align-items: center;
-}
 
 body {
   height: 100vh;
@@ -38,7 +32,6 @@ a {
 
 h1, h2, h3 {
   font-family: $header-font;
-  font-weight: bold;
 }
 
 ul {

@@ -57,7 +57,7 @@ class StoriesController < ApplicationController
       :price_rating,
       :worth_it,
       :mood_type,
-      :experience_type,
+      :feeling_type,
       :ambience_type,
       photos: []
     )
