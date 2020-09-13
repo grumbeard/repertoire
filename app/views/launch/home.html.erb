@@ -1,11 +1,17 @@
 <div class="container__contents">
-  <h1>Launch#home</h1>
-  <%= link_to image_tag("https://source.unsplash.com/W8KTS-mhFUE/600x400"), new_story_path %>
+    <section class="splash-content">
+        <%= image_tag "https://source.unsplash.com/nI7knd5sQfo/600x400", alt: "Story Image", class: "launch-image" %>
+    </section>
 </div>
 
-<footer>
-  <div class="button-container">
-    <a href="#!" class="button button__left">menu</a>
-    <a href="#!" class="button button__right">2nd menu</a>
+<footer class="nav-content">
+  <div class=" button-container">
+    <a href="#!" class="button button__confirm">menu</a>
   </div>
 </footer>
+
+<!-- W8KTS-mhFUE -->
+      <%= link_to new_story_path do %>
+      <% end %>
+
+

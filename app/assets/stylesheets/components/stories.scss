@@ -4,23 +4,26 @@
 
 // STORY CARD
 .story-cards-container {
-  width: 100vw;
-  padding: 10% 5vw;
+  width: 100%;
+  padding: 5vh 0;
   // Define Grid
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 5px;
+  grid-gap: 5%;
   @include tablet(4);
   @include desktop(6);
-}
+  a {
+    color: $text-main;
+  }
 
-.story-card {
-  grid-column: 1fr;
-  padding: 5%;
-  .story-image {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 4px;
+  .story-card {
+    background-color: rgba($card-base, 0);
+    align-items: flex-start;
+    // STORY CARD -- PHOTO
+    .photo-container {
+      width: 100%;
+      height: 38vh;
+    }
   }
 }
 
@@ -29,11 +32,13 @@
 .photo-container {
   background-color: darken($base, 3%);
   border-radius: 4px;
-  padding: 0 5vw;
+  // margin: 0 5vw;
+  width: 100%;
+  height: 100%;
   .story-image {
-    width: 65vw;
-    height: 60vh;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     overflow: hidden;
     border-radius: 4px;
   }
@@ -45,13 +50,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
-  padding-top: 10%;
+  padding-top: 5%;
+  text-align: left;
 }
 
 // STORY DESCRIPTION -- TITLE
 
 .story-info__title {
-  grid-column: 1 / span 3
+  grid-column: 1 / span 3;
 }
 
 // STORY DESCRIPTION -- TAGS

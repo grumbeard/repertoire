@@ -1,15 +1,19 @@
-<div class="story-cards-container">
-  <% @stories.each do |story| %>
-    <%= link_to story_path(story) do %>
-      <div class="card story-card">
-        <% @story = story %>
-        <%= render 'shared/photos' %>
-        <div class="story-info">
-          <div class="story-info__title">
-            <%= render 'shared/story-title' %>
+<div class="container__contents">
+  <div class="story-cards-container">
+    <% @stories.each do |story| %>
+      <%= link_to story_path(story) do %>
+        <div class="story-card card">
+          <% @story = story %>
+          <div class="photo-container">
+            <%= render 'shared/photos' %>
+          </div>
+          <div class="story-info">
+            <div class="story-info__title">
+              <%= render 'shared/story-title' %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

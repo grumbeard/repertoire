@@ -1,10 +1,11 @@
 // @import 'bootstrap/scss/bootstrap';
-@import './reset';
-@import './config';
-@import './buttons';
-@import './stories';
-@import './tagging';
-@import './cards';
+@import './components/reset';
+@import './components/config';
+@import './components/buttons';
+@import './components/stories';
+@import './components/tagging';
+@import './components/cards';
+@import './components/launch';
 
 
 body {
@@ -46,19 +47,27 @@ footer {
 
 
 .container__full-height {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   @include flexAndCenter(column);
 }
 
-.container__three-quart-height {
+.container__two-third-height {
   height: 65vh;
-}
-
-.container__one-quart-height {
-  height: 20vh;
+  padding: 5% 0;
 }
 
 .container__contents {
   overflow: auto;
+  width: 100vw;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+}
+
+.splash-content {
+  text-align: center;
+  flex: 1;
+  padding: 5% 0;
 }
