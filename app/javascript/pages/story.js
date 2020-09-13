@@ -1,3 +1,5 @@
+// GEOCODING
+
 const getLocation = ()=> {
   const photo_upload_button = document.getElementById('story_photos');
   if (photo_upload_button) {
@@ -35,9 +37,11 @@ const displayError = (error) => {
   };
 
   if (error) {
-    const geolocation_notice = document.getElementById('geolocation_notice');
+    const geolocation_notice = document.getElementById('js-geolocation_notice');
     geolocation_notice.innerHTML = `Unable to fetch Geolocation: ${errors[error.code]}`;
   }
 }
 
 export { displayError };
+
+// PHOTO UPLOAD

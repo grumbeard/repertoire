@@ -10,8 +10,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5%;
-  @include tablet(4);
-  @include desktop(6);
+  @include tablet(3);
+  @include desktop(4);
   a {
     color: $text-main;
   }
@@ -106,7 +106,10 @@
   text-align: center;
 }
 
-.carousel-nav {}
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+}
 
 .js-carousel-btn {
   width: 1rem;
@@ -114,4 +117,35 @@
   background-color: rgba(189, 187, 136, 0.7);
   border-radius: 50%;
   margin: 0 5px;
+}
+
+// FORMS
+#new_story {
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  // display: none;
+}
+
+.story_photos {
+  padding: 5% 0;
+  input:matches([type="button"], [type="submit"], [type="reset"]),
+  input[type="file"]::-webkit-file-upload-button, button {
+    background-image: url('https://source.unsplash.com/nI7knd5sQfo/600x400');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
+  label {
+    display: none;
+  }
+}
+
+
+#story_photos {
+  width: calc(100vw - 10%);
+  height: calc(90vh - 3rem);
 }
