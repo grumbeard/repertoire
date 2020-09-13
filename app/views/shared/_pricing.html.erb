@@ -1,6 +1,12 @@
-<% @story.price_rating.times do %>
-  <span class="price__true">$</span>
-<% end %>
-<% (3 - @story.price_rating).times do %>
-  <span class="price__false">$</span>
+<% if @story.price_rating.present? %>
+  <% @story.price_rating.times do %>
+    <span class="price__true">$</span>
+  <% end %>
+  <% (3 - @story.price_rating).times do %>
+    <span class="price__false">$</span>
+  <% end %>
+<% else %>
+  <% 3.times do %>
+    <span class="price__false">$</span>
+  <% end %>
 <% end %>

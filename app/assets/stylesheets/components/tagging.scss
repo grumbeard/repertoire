@@ -1,0 +1,25 @@
+// Place all the styles related to the tagging controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.tag {
+  margin: 0.5rem auto;
+  padding: 0.1rem 1rem;
+  text-align: center;
+  color: $text-alt;
+  text-align: left;
+  border-radius: 2px;
+}
+
+.tag__experience {
+  background-color: $purple;
+}
+
+.tag__location {
+  background-color: $green;
+}
+
+.tag__other {
+  background-color: $grey;
+  color: $text-main;
+}

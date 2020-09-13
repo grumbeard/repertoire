@@ -1,5 +1,8 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :destroy, :experience, :pricing]
+  before_action :set_experience_taggings, only: [:show]
+  # before_action :set_location_taggings, only: [:show]
+  before_action :set_other_taggings, only: [:show]
 
   def new
     @story = Story.new
@@ -14,13 +17,15 @@ class StoriesController < ApplicationController
 
     #Use Geocoder to autotag location info
     results = Geocoder.search([@story.latitude, @story.longitude])
-    address_details << results.first.street if results.first.street
-    address_details << results.first.neighbourhood if results.first.neighbourhood
-    address_details << results.first.suburb if results.first.suburb
-    address_details.each do |value|
-      "Tagging with Location: #{value}"
-      tag = Tag.new(name: value, tag_category: location) unless Tag.where(name: value).present?
-      tag.save if tag
+    if results.present?
+      address_details << results.first.street if results.first.street
+      address_details << results.first.neighbourhood if results.first.neighbourhood
+      address_details << results.first.suburb if results.first.suburb
+      address_details.each do |value|
+        "Tagging with Location: #{value}"
+        tag = Tag.new(name: value, tag_category: location) unless Tag.where(name: value).present?
+        tag.save if tag
+      end
     end
     if @story.save
       redirect_to story_path(@story)
@@ -30,7 +35,7 @@ class StoriesController < ApplicationController
   end
 
   def show
-    @taggings = Tagging.where(story: @story)
+    @location_taggings = Tagging.where({story: @story, tag: Tag.where(tag_category: TagCategory.where(name: 'Location'))})
   end
 
   def destroy
@@ -54,7 +59,7 @@ class StoriesController < ApplicationController
       :price_rating,
       :worth_it,
       :mood_type,
-      :experience_type,
+      :feeling_type,
       :ambience_type,
       photos: []
     )
@@ -62,5 +67,19 @@ class StoriesController < ApplicationController
 
   def set_story
     @story = Story.find(params[:id])
+  end
+
+  def set_experience_taggings
+    @mood_taggings = Tagging.where({story: @story, tag: Tag.where(tag_category: TagCategory.where(name: 'Mood'))})
+    @feeling_taggings = Tagging.where({story: @story, tag: Tag.where(tag_category: TagCategory.where(name: 'Feeling'))})
+    @ambience_taggings = Tagging.where({story: @story, tag: Tag.where(tag_category: TagCategory.where(name: 'Ambience'))})
+  end
+
+  def set_location_taggings
+    @location_taggings = Tagging.where({story: @story, tag: Tag.where(tag_category: TagCategory.where(name: 'Location'))})
+  end
+
+  def set_other_taggings
+    @other_taggings = Tagging.where({story: @story, tag: Tag.where(tag_category: TagCategory.where(name: 'Other'))})
   end
 end

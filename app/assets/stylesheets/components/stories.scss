@@ -1,0 +1,151 @@
+// Place all the styles related to the Stories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// STORY CARD
+.story-cards-container {
+  width: 100%;
+  padding: 5vh 0;
+  // Define Grid
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5%;
+  @include tablet(3);
+  @include desktop(4);
+  a {
+    color: $text-main;
+  }
+
+  .story-card {
+    background-color: rgba($card-base, 0);
+    align-items: flex-start;
+    // STORY CARD -- PHOTO
+    .photo-container {
+      width: 100%;
+      height: 38vh;
+    }
+  }
+}
+
+// STORY PHOTO
+
+.photo-container {
+  background-color: darken($base, 3%);
+  border-radius: 4px;
+  // margin: 0 5vw;
+  width: 100%;
+  height: 100%;
+  .story-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+}
+
+// STORY DESCRIPTION
+
+.story-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  padding-top: 5%;
+  text-align: left;
+}
+
+// STORY DESCRIPTION -- TITLE
+
+.story-info__title {
+  grid-column: 1 / span 3;
+}
+
+// STORY DESCRIPTION -- TAGS
+
+.story-info__tag-list {
+  grid-column: 1 / span 2;
+}
+
+// STORY DESCRIPTION -- PRICING
+
+.story-info__price-rating {
+  grid-column: 3;
+  text-align: center;
+}
+
+.price__true {
+  color: $yellow;
+}
+
+.price__false {
+  color: $text-alt;
+}
+
+.worth-it__true, .worth-it__false {
+  margin: 0.5rem 0;
+  padding: 0.1rem 1rem;
+  color: $text-alt;
+  text-align: center;
+  // font-size: 0.6rem
+}
+
+.worth-it__true {
+  background-color: $light-yellow;;
+  color: $text-main;
+}
+
+.worth-it__false {
+  background-color: $dark-grey;
+  text-decoration: line-through;
+}
+
+// CAROUSEL
+
+.photo-carousel {
+  padding-top: 10%;
+  text-align: center;
+}
+
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.js-carousel-btn {
+  width: 1rem;
+  height: 1rem;
+  background-color: rgba(189, 187, 136, 0.7);
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+// FORMS
+#new_story {
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  // display: none;
+}
+
+.story_photos {
+  padding: 5% 0;
+  input:matches([type="button"], [type="submit"], [type="reset"]),
+  input[type="file"]::-webkit-file-upload-button, button {
+    background-image: url('https://source.unsplash.com/nI7knd5sQfo/600x400');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
+  label {
+    display: none;
+  }
+}
+
+
+#story_photos {
+  width: calc(100vw - 10%);
+  height: calc(90vh - 3rem);
+}

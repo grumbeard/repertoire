@@ -8,7 +8,7 @@ one:
   price_rating: 1
   worth_it: false
   mood_type: MyString
-  experience_type: MyString
+  feeling_type: MyString
   ambience_type: MyString
 
 two:
@@ -19,5 +19,5 @@ two:
   price_rating: 1
   worth_it: false
   mood_type: MyString
-  experience_type: MyString
+  feeling_type: MyString
   ambience_type: MyString

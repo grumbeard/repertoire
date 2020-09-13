@@ -1,0 +1,5 @@
+.card {
+  @include flexAndCenter(column);
+  background-color: $card-base;
+  border-radius: 15px;
+}

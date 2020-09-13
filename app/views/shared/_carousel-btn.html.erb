@@ -1,0 +1,5 @@
+<% if @story.photos.attached? %>
+  <% @story.photos.each do |photo| %>
+    <div class="js-carousel-btn"></div>
+  <% end %>
+<% end %>

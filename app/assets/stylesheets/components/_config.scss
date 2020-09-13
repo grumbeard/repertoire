@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Roboto:wght@400;700&display=swap');
+
+// COLOURS
+$dark-grey: #94A2AB;
+$grey: #E0E7EC;
+$light-grey: #F3F5F8;
+$dark-purple: #6D6875;
+$purple: #967AA1;
+$light-purple: #AA94B3;
+$yellow: #FFE95C;
+$light-yellow: #FFF3A4;
+$dark-blue: #478BFF;
+$blue: #649DFF;
+$light-blue: #72A6FF;
+$beige: #FFD9C4;
+$light-beige: #FFF2EB;
+$dark-beige: #FFBD99;
+$orange: #F54B23;
+$light-orange: #F76E50;
+$dark-orange: #EA340B;
+$green: #00CC99;
+
+// COLOUR SETTINGS
+$base: $light-grey;
+$card-base: white;
+$text-alt: white;
+$text-main: $dark-grey;
+$link: $purple;
+$link-hover: $dark-purple;
+$edit: $beige;
+$edit-hover: $dark-beige;
+$delete: $orange;
+$delete-hover: $dark-orange;
+$confirm: $blue;
+$confirm-hover: $dark-blue;
+
+// FONT SETTINGS
+$header-font: 'Roboto', sans-serif;
+$base-font: 'Balsamiq Sans', cursive;
+$normal: 400;
+$bold: 700;
+
+// MEDIA QUERY SETTINGS
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+// MIXINS
+@mixin flexAndCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin tablet($col-num) {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    grid-template-columns: repeat($col-num, 1fr);
+  }
+}
+
+@mixin desktop($col-num) {
+  @media (min-width: #{$desktop-width}) {
+    grid-template-columns: repeat($col-num, 1fr);
+  }
+}
