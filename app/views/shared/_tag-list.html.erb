@@ -1,36 +1,46 @@
 <!-- Experience Tags -->
 <ul>
-  <% @mood_taggings.each do |tagging| %>
-    <li class='tag tag__experience'>
-      <%= tagging.tag.name %>
-    </li>
+  <% if @mood_taggings.present? %>
+    <% @mood_taggings.each do |tagging| %>
+      <li class='tag tag__experience'>
+        <%= tagging.tag.name %>
+      </li>
+    <% end %>
   <% end %>
-  <% @feeling_taggings.each do |tagging| %>
-    <li class='tag tag__experience'>
-      <%= tagging.tag.name %>
-    </li>
+  <% if @feeling_taggings.present? %>
+    <% @feeling_taggings.each do |tagging| %>
+      <li class='tag tag__experience'>
+        <%= tagging.tag.name %>
+      </li>
+    <% end %>
   <% end %>
-  <% @ambience_taggings.each do |tagging| %>
-    <li class='tag tag__experience'>
-      <%= tagging.tag.name %>
-    </li>
+  <% if @ambience_taggings.present? %>
+    <% @ambience_taggings.each do |tagging| %>
+      <li class='tag tag__experience'>
+        <%= tagging.tag.name %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
 
 <!-- Location Tags -->
 <ul>
-  <% @location_taggings.each do |tagging| %>
-    <li class='tag tag__location'>
-      <%= tagging.tag.name %>
-    </li>
+  <% if @location_taggings.present? %>
+    <% @location_taggings.each do |tagging| %>
+      <li class='tag tag__location'>
+        <%= tagging.tag.name %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
 
 <!-- Other Tags -->
 <ul>
-  <% @other_taggings.each do |tagging| %>
-    <li class='tag tag__other'>
-      <%= tagging.tag.name %>
-    </li>
+  <% if @other_taggings.present? %>
+    <% @other_taggings.each do |tagging| %>
+      <li class='tag tag__other'>
+        <%= tagging.tag.name %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
