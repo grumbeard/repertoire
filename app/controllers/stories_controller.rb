@@ -14,7 +14,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
-
+    address_details = []
     #Use Geocoder to autotag location info
     results = Geocoder.search([@story.latitude, @story.longitude])
     if results.present?
