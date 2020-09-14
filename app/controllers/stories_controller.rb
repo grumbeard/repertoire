@@ -24,7 +24,7 @@ class StoriesController < ApplicationController
       address_details.each do |value|
         tag = Tag.new(name: value, tag_category: location) unless Tag.where(name: value).present?
         tag.save if tag
-        tagging = Tagging.new(story: story, tag: Tag.where(name: value).first)
+        tagging = Tagging.new(story: @story, tag: Tag.where(name: value).first)
         tagging.save if tagging
       end
     end
