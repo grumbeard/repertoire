@@ -1,50 +1,58 @@
-<!-- Experience Tags -->
-<ul>
-  <% if @mood_taggings.present? %>
-    <% @mood_taggings.each do |tagging| %>
-      <li class='tag tag__experience'>
-        <%= tagging.tag.name %>
-      </li>
-      <%= link_to 'X',
-        story_tagging_path(@story, tagging),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
+<div class="container-contents"></div>
+<section class="tags-container">
+  <!-- Experience Tags -->
+  <ul>
+    <% if @mood_taggings.present? %>
+      <% @mood_taggings.each do |tagging| %>
+        <li class='tag tag__experience'>
+          <%= tagging.tag.name %>
+        </li>
+        <%= link_to 'X',
+          story_tagging_path(@story, tagging),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+      <% end %>
     <% end %>
-  <% end %>
-  <% if @feeling_taggings.present? %>
-    <% @feeling_taggings.each do |tagging| %>
-      <li class='tag tag__experience'>
-        <%= tagging.tag.name %>
-      </li> <span>X</span>
+    <% if @feeling_taggings.present? %>
+      <% @feeling_taggings.each do |tagging| %>
+        <li class='tag tag__experience'>
+          <%= tagging.tag.name %>
+        </li> <span>X</span>
+      <% end %>
     <% end %>
-  <% end %>
-  <% if @ambience_taggings.present? %>
-    <% @ambience_taggings.each do |tagging| %>
-      <li class='tag tag__experience'>
-        <%= tagging.tag.name %>
-      </li> <span>X</span>
+    <% if @ambience_taggings.present? %>
+      <% @ambience_taggings.each do |tagging| %>
+        <li class='tag tag__experience'>
+          <%= tagging.tag.name %>
+        </li> <span>X</span>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
 
-<!-- Location Tags -->
-<ul>
-  <% if @location_taggings.present? %>
-    <% @location_taggings.each do |tagging| %>
-      <li class='tag tag__location'>
-        <%= tagging.tag.name %>
-      </li> <span>X</span>
+  <!-- Location Tags -->
+  <ul>
+    <% if @location_taggings.present? %>
+      <% @location_taggings.each do |tagging| %>
+        <li class='tag tag__location'>
+          <%= tagging.tag.name %>
+        </li> <span>X</span>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
 
-<!-- Other Tags -->
-<ul>
-  <% if @other_taggings.present? %>
-    <% @other_taggings.each do |tagging| %>
-      <li class='tag tag__other'>
-        <%= tagging.tag.name %>
-      </li> <span>X</span>
+  <!-- Other Tags -->
+  <ul>
+    <% if @other_taggings.present? %>
+      <% @other_taggings.each do |tagging| %>
+        <li class='tag tag__other'>
+          <%= tagging.tag.name %>
+        </li> <span>X</span>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+</section>
+<footer>
+  <div class="button-container">
+    <%= link_to '+', tags_new_path, class: 'button button__confirm' %>
+  </div>
+</footer>

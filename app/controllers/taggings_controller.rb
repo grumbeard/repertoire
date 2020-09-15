@@ -5,9 +5,10 @@ class TaggingsController < ApplicationController
   before_action :set_other_taggings, only: [:index]
 
   def destroy
+    byebug
     @tagging = Tagging.find_by_id(params[:id])
     @tagging.destroy
-    redirect_to story_taggings_path
+    redirect_to story_taggings_path(@story)
   end
 
   def create
