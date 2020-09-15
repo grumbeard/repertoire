@@ -1,3 +1,14 @@
 // Place all the styles related to the Tags controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.tag-container {
+  display: flex;
+  align-items: center;
+  .tag {
+    flex: 1;
+  }
+}
+
+.x__delete {
+  margin-left: 5%;
+}

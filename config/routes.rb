@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :stories do
     resources :taggings, only: [:create, :index, :destroy]
+    resources :tags, only: [:new, :create]
     member do
       get :experience
       get :pricing
