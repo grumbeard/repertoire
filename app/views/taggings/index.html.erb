@@ -1,1 +1,50 @@
-<%= render 'shared/tag-list' %>
+<!-- Experience Tags -->
+<ul>
+  <% if @mood_taggings.present? %>
+    <% @mood_taggings.each do |tagging| %>
+      <li class='tag tag__experience'>
+        <%= tagging.tag.name %>
+      </li>
+      <%= link_to 'X',
+        story_tagging_path(@story, tagging),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+    <% end %>
+  <% end %>
+  <% if @feeling_taggings.present? %>
+    <% @feeling_taggings.each do |tagging| %>
+      <li class='tag tag__experience'>
+        <%= tagging.tag.name %>
+      </li> <span>X</span>
+    <% end %>
+  <% end %>
+  <% if @ambience_taggings.present? %>
+    <% @ambience_taggings.each do |tagging| %>
+      <li class='tag tag__experience'>
+        <%= tagging.tag.name %>
+      </li> <span>X</span>
+    <% end %>
+  <% end %>
+</ul>
+
+<!-- Location Tags -->
+<ul>
+  <% if @location_taggings.present? %>
+    <% @location_taggings.each do |tagging| %>
+      <li class='tag tag__location'>
+        <%= tagging.tag.name %>
+      </li> <span>X</span>
+    <% end %>
+  <% end %>
+</ul>
+
+<!-- Other Tags -->
+<ul>
+  <% if @other_taggings.present? %>
+    <% @other_taggings.each do |tagging| %>
+      <li class='tag tag__other'>
+        <%= tagging.tag.name %>
+      </li> <span>X</span>
+    <% end %>
+  <% end %>
+</ul>
