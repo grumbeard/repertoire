@@ -1,0 +1,13 @@
+<div class="container__contents">
+  <%= simple_form_for(@tag) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :name,
+                required: true,
+                input_html: { autocomplete: 'Tag Name' } %>
+</div>
+<footer>
+    <div class="button-container">
+      <%= f.button :submit, "save tag", class: 'button button__confirm' %>
+    </div>
+  <% end %>
+</footer>

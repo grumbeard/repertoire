@@ -1,4 +1,3 @@
-
 <div class="container__contents">
   <%= simple_form_for(@story) do |f| %>
     <%= f.error_notification %>
@@ -9,11 +8,11 @@
     <%= f.input :latitude,
                 as: :hidden,
                 required: false,
-                input_html: { autocomplete: "latitude" } %>
+                input_html: { autocomplete: 'latitude' } %>
     <%= f.input :longitude,
                 as: :hidden,
                 required: false,
-                input_html: { autocomplete: "longitude" } %>
+                input_html: { autocomplete: 'longitude' } %>
     <p id='js-geolocation_notice'>(Geolocation will be captured automatically)</p>
 </div>
 <footer>

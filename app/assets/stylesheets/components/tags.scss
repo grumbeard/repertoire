@@ -12,3 +12,34 @@
 .x__delete {
   margin-left: 5%;
 }
+
+.tagcategories-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tag-category {
+  margin: 1rem 0;
+  flex: 1;
+}
+
+// EDIT TAG NAME
+.edit_tag {
+  flex: 1;
+  @include flexAndCenter(column);
+}
+
+.tag_name {
+  width: 100%;
+  padding: 0 10%;
+  display: flex;
+  label {
+    display: none;
+  }
+  input {
+    width: 100%;
+    font-size: 4rem;
+    border-style: none;
+  }
+}
