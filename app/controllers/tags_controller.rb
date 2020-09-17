@@ -24,7 +24,7 @@ class TagsController < ApplicationController
 
   def update
     if @tag.update(tag_params)
-      render story_taggings_path(Story.find_by_id(@tag.taggings.last.story))
+      redirect_to story_taggings_path(Story.find_by_id(@tag.taggings.last.story))
     else
       render edit_tag_path(@tag)
     end
