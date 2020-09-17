@@ -39,7 +39,12 @@
   }
   input {
     width: 100%;
-    font-size: 4rem;
+    height: 4rem;
+    font-size: $large-font-size;
     border-style: none;
+  }
+  input::placeholder {
+    color: $text-light;
+    padding-left: 1rem;
   }
 }
