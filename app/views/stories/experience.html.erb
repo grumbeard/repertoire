@@ -3,19 +3,44 @@
 <%= @story.feeling_type %>
 <%= @story.ambience_type %>
 <br />
-<h2>Moods</h2>
-<% @mood_tags.each do |mood| %>
-  <%= mood.name %>
-<% end %>
-<br />
-<h2>Feelings</h2>
-<% @feeling_tags.each do |feeling| %>
-  <%= feeling.name %>
-<% end %>
-<br />
-<h2>Ambience</h2>
-<% @ambience_tags.each do |ambience| %>
-  <%= ambience.name %>
-<% end %>
+<div class="container__contents">
+  <section class="ratings-grid">
+    <div class="ratings-container">
+      <% @mood_tags.each do |mood| %>
+        <div class="card rating-card mood-gradient">
+          <%= image_tag "https://source.unsplash.com/featured/?#{mood.name}", alt: "Mood Image", class: "rating-image" %>
+          <div class="rating-text">
+            <%= mood.name %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="ratings-container">
+      <% @feeling_tags.each do |feeling| %>
+        <div class="card rating-card feeling-gradient">
+          <%= image_tag "https://source.unsplash.com/featured/?#{feeling.name}", alt: "Feeling Image", class: "rating-image" %>
+          <div class="rating-text">
+            <%= feeling.name %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="ratings-container">
+      <% @ambience_tags.each do |ambience| %>
+        <div class="card rating-card ambience-gradient">
+          <%= image_tag "https://source.unsplash.com/featured/?#{ambience.name}", alt: "Ambience Image", class: "rating-image" %>
+          <div class="rating-text">
+            <%= ambience.name %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </section>
 
-<%= link_to 'Next', pricing_story_path(@story) %>
+
+</div>
+<footer>
+  <div class="button-container">
+    <%= link_to 'Next', pricing_story_path(@story), class: 'button button__confirm' %>
+  </div>
+</footer>
