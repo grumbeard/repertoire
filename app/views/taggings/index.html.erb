@@ -1,1 +1,83 @@
-<%= render 'shared/tag-list' %>
+<div class="container__contents">
+  <section class="tags-container">
+    <!-- Experience Tags -->
+      <% if @mood_taggings.present? %>
+        <% @mood_taggings.each do |tagging| %>
+          <div class="tag-container">
+            <span class='tag tag__experience'>
+              <%= tagging.tag.name %>
+            </span>
+            <%= link_to 'X',
+              story_tagging_path(@story, tagging),
+              method: :delete,
+              data: { confirm: "Are you sure?" }, class: 'x__delete' %>
+          </div>
+        <% end %>
+      <% end %>
+      <% if @feeling_taggings.present? %>
+        <% @feeling_taggings.each do |tagging| %>
+          <div class="tag-container">
+            <span class='tag tag__experience'>
+              <%= tagging.tag.name %>
+            </span>
+            <%= link_to 'X',
+              story_tagging_path(@story, tagging),
+              method: :delete,
+              data: { confirm: "Are you sure?" }, class: 'x__delete' %>
+          </div>
+        <% end %>
+      <% end %>
+      <% if @ambience_taggings.present? %>
+        <% @ambience_taggings.each do |tagging| %>
+          <div class="tag-container">
+            <span class='tag tag__experience'>
+              <%= tagging.tag.name %>
+            </span>
+            <%= link_to 'X',
+                story_tagging_path(@story, tagging),
+                method: :delete,
+                data: { confirm: "Are you sure?" }, class: 'x__delete' %>
+          </div>
+        <% end %>
+      <% end %>
+
+    <!-- Location Tags -->
+    <ul>
+      <% if @location_taggings.present? %>
+        <% @location_taggings.each do |tagging| %>
+          <div class="tag-container">
+            <span class='tag tag__location'>
+              <%= tagging.tag.name %>
+            </span>
+            <%= link_to 'X',
+                story_tagging_path(@story, tagging),
+                method: :delete,
+                data: { confirm: "Are you sure?" }, class: 'x__delete' %>
+          </div>
+        <% end %>
+      <% end %>
+    </ul>
+
+    <!-- Other Tags -->
+    <ul>
+      <% if @other_taggings.present? %>
+        <% @other_taggings.each do |tagging| %>
+          <div class="tag-container">
+            <span class='tag tag__other'>
+              <%= tagging.tag.name %>
+            </span>
+          <%= link_to 'X',
+              story_tagging_path(@story, tagging),
+              method: :delete,
+              data: { confirm: "Are you sure?" }, class: 'x__delete' %>
+          </div>
+        <% end %>
+      <% end %>
+    </ul>
+  </section>
+</div>
+<footer>
+  <div class="button-container">
+    <%= link_to 'add custom tag', new_story_tag_path(@story), class: 'button button__confirm' %>
+  </div>
+</footer>

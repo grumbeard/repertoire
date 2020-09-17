@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :destroy, :experience, :pricing]
   before_action :set_experience_taggings, only: [:show]
-  # before_action :set_location_taggings, only: [:show]
+  before_action :set_location_taggings, only: [:show]
   before_action :set_other_taggings, only: [:show]
 
   def new
@@ -33,10 +33,6 @@ class StoriesController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def show
-    @location_taggings = Tagging.where({story: @story, tag: Tag.where(tag_category: TagCategory.where(name: 'Location'))})
   end
 
   def destroy

@@ -25,10 +25,10 @@
 
 <footer>
   <div class="button-container">
-    <%= link_to 'edit Story', edit_story_path(@story), class: 'button button__edit button__left' %>
+    <%= link_to 'edit story', edit_story_path(@story), class: 'button button__edit button__left' %>
     <%= link_to "delete",
-  story_path(@story),
-  method: :delete,
-  data: { confirm: "Are you sure?" }, class: 'button button__delete button__right' %>
+      story_path(@story),
+      method: :delete,
+      data: { confirm: "Are you sure?" }, class: 'button button__delete button__right' %>
   </div>
 </footer>

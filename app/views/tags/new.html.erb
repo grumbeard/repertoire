@@ -1,0 +1,11 @@
+<div class="container__contents">
+  <div class="tagcategories-container">
+    <% if TagCategory.all.present? %>
+      <% TagCategory.all.each do |tagcategory| %>
+        <div class="tag-category card">
+          <%= link_to tagcategory.name, tags_create_path(story_id: @story, tag_category: tagcategory) %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

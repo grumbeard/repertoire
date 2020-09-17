@@ -25,6 +25,7 @@ $base: $light-grey;
 $card-base: white;
 $text-alt: white;
 $text-main: $dark-grey;
+$text-light: $light-grey;
 $link: $purple;
 $link-hover: $dark-purple;
 $edit: $beige;
@@ -39,6 +40,9 @@ $header-font: 'Roboto', sans-serif;
 $base-font: 'Balsamiq Sans', cursive;
 $normal: 400;
 $bold: 700;
+$small-font-size: 0.8rem;
+$base-font-size: 1rem;
+$large-font-size: 2rem;
 
 // MEDIA QUERY SETTINGS
 $tablet-width: 768px;
