@@ -26,14 +26,15 @@
 
 // EDIT TAG NAME
 .edit_tag {
-  flex: 1;
-  @include flexAndCenter(column);
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  display: flex;
 }
 
 .tag_name {
   width: 100%;
   padding: 0 10%;
-  display: flex;
+  margin-top: auto;
   label {
     display: none;
   }
