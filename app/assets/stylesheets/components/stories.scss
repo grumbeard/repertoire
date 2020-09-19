@@ -75,10 +75,16 @@
 
 .price__true {
   color: $yellow;
+  a {
+    color: $yellow;
+  }
 }
 
 .price__false {
   color: $text-alt;
+  a {
+    color: $text-alt;
+  }
 }
 
 .worth-it__true, .worth-it__false {
@@ -238,4 +244,29 @@
   position: absolute;
   margin: 0 auto;
   color: $text-alt;
+}
+
+.rate-pricing {
+  flex: 1;
+  @include flexAndCenter(row);
+  font-size: $large-font-size;
+}
+
+.rate-worth-it {
+  width: 100%;
+  height: 100%;
+  @include flexAndCenter(column);
+}
+
+.rate-worth-it__true, .rate-worth-it__false {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+  }
+  .false {
+    pointer-events: none;
+    cursor: not-allowed;
+  }
 }

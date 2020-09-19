@@ -1,4 +1,49 @@
-<h1><%= @story.title %></h1>
-<%= @story.price_rating %>
-<%= @story.worth_it %>
-<%= link_to 'Done', story_path(@story) %>
+<div class="container__contents">
+  <section class="rate-pricing">
+    <% if @story.price_rating.present? %>
+      <% @story.price_rating.times do |rating| %>
+        <span class="price__true" data-price-rating="<%= rating %>">
+          <%= link_to '$',
+          story_path(@story), price_rating: (rating + 1),
+          method: :put %>
+        </span>
+      <% end %>
+      <% (3 - @story.price_rating).times do |rating| %>
+        <span class="price__false" data-price-rating="<%= rating + @story.price_rating %>">
+          <%= link_to '$',
+          story_path(@story, price_rating: (rating + 1 + @story.price_rating)),
+          method: :put %>
+        </span>
+      <% end %>
+    <% else %>
+      <% 3.times do |rating| %>
+        <span class="price__false" data-price-rating="<%= rating %>">
+          <%= link_to '$',
+          story_path(@story, price_rating: (rating + 1)),
+          method: :put %>
+        </span>
+      <% end %>
+    <% end %>
+  </section>
+  <section class="rate-worth-it container__two-third-height">
+    <div class="rate-worth-it__true <%= @story.worth_it %>">
+      <%= link_to story_path(@story, worth_it: true),
+          method: :put do %>
+        <%= image_tag "image-button-worth-it.png" %>
+      <% end %>
+    </div>
+    <div class="rate-worth-it__false <%= @story.worth_it %>">
+      <%= link_to story_path(@story, worth_it: false),
+          method: :put do %>
+        <%= image_tag "image-button-not-worth-it.png" %>
+      <% end %>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="button-container">
+    <%= link_to 'Done', story_path(@story), class: 'button button__confirm' %>
+  </div>
+</footer>
