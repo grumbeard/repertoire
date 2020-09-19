@@ -1,18 +1,16 @@
-<h1><%= @story.title %></h1>
-<%= @story.mood_type %>
-<%= @story.feeling_type %>
-<%= @story.ambience_type %>
-<br />
 <div class="container__contents">
   <section class="ratings-grid">
     <div class="ratings-container">
       <% @mood_tags.each do |mood| %>
+        <%= link_to story_taggings_path(@story, tag_id: mood),
+            method: :create do %>
         <div class="card rating-card mood-gradient">
           <%= image_tag "https://source.unsplash.com/featured/?#{mood.name}", alt: "Mood Image", class: "rating-image" %>
           <div class="rating-text">
             <%= mood.name %>
           </div>
         </div>
+        <% end %>
       <% end %>
     </div>
     <div class="ratings-container">

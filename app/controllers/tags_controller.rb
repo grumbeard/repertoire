@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-  before_action :set_story, only: [:new, :create]
+  before_action :set_story, only: [:new, :create, :update]
   before_action :set_tag, only: [:edit, :update]
   def new
     @tag = Tag.new

@@ -1,5 +1,5 @@
 <div class="container__contents">
-  <section class="tags-container">
+  <section class="tags-container tagged">
     <!-- Experience Tags -->
       <% if @mood_taggings.present? %>
         <% @mood_taggings.each do |tagging| %>
@@ -74,6 +74,18 @@
         <% end %>
       <% end %>
     </ul>
+  </section>
+  <section class="tags-container untagged">
+    <% @untagged.each do |tag| %>
+      <div class="tag-container">
+        <span class='tag tag__other'>
+          <%= tag.name %>
+        </span>
+        <%= link_to '+',
+          story_taggings_path(@story, tag_id: tag),
+          method: :create, class: 'x__add' %>
+      </div>
+    <% end %>
   </section>
 </div>
 <footer>

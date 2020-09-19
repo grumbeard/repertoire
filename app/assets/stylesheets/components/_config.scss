@@ -34,6 +34,10 @@ $delete: $orange;
 $delete-hover: $dark-orange;
 $confirm: $blue;
 $confirm-hover: $dark-blue;
+$notice: $light-beige;
+$notice-text: $dark-purple;
+$alert: $light-orange;
+$alert-text: $dark-orange;
 
 // FONT SETTINGS
 $header-font: 'Roboto', sans-serif;
@@ -47,6 +51,10 @@ $large-font-size: 2rem;
 // MEDIA QUERY SETTINGS
 $tablet-width: 768px;
 $desktop-width: 1024px;
+
+// LOCAL IMAGES
+$image-button-portrait: './image-button-portrait.png';
+$image-button-landscape: './image-button-landscape.png';
 
 // MIXINS
 @mixin flexAndCenter($direction) {
