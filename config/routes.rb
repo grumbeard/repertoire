@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'tags/create'
   # Send users to sign-up page by default
   devise_for :users
-  root to: 'launch#home'
+  root to: 'stories#new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :stories do

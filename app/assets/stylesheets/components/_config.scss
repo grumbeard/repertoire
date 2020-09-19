@@ -48,6 +48,10 @@ $large-font-size: 2rem;
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
+// LOCAL IMAGES
+$image-button-portrait: './image-button-portrait.png';
+$image-button-landscape: './image-button-landscape.png';
+
 // MIXINS
 @mixin flexAndCenter($direction) {
   display: flex;

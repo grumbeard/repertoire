@@ -148,9 +148,14 @@
   }
   label {
     font-size: 0;
-    background-image: url('https://source.unsplash.com/nI7knd5sQfo/600x400');
+    background-image: url($image-button-portrait);
     background-size: cover;
     flex: 1;
+  }
+  @media (min-width: #{$tablet-width}) {
+    label {
+      background-image: url($image-button-landscape)
+    }
   }
 }
 
@@ -158,6 +163,10 @@
 #story_photos {
   width: calc(100vw - 10%);
   height: calc(90vh - 3rem);
+}
+
+.btn {
+  border: none;
 }
 
 
