@@ -53,8 +53,8 @@ $tablet-width: 768px;
 $desktop-width: 1024px;
 
 // LOCAL IMAGES
-$image-button-portrait: './image-button-portrait.png';
-$image-button-landscape: './image-button-landscape.png';
+$image-button-portrait: 'https://res.cloudinary.com/grumbeard2/image/upload/v1600487755/image-button-portrait_sjd5za.png';
+$image-button-landscape: 'https://res.cloudinary.com/grumbeard2/image/upload/v1600487753/image-button-landscape_ztc4yl.png';
 
 // MIXINS
 @mixin flexAndCenter($direction) {
