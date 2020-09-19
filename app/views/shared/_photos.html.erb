@@ -3,7 +3,7 @@
     <%= cl_image_tag photo.key, height: 400, width: 280, crop: :fill, alt: "Story Image", class: "story-image" %>
   <% end %>
 <% elsif @story.title %>
-  <%= image_tag "https://source.unsplash.com/featured/?#{@story.title},portrait", alt: "Story Image", class: "story-image" %>
+  <%= image_tag "https://source.unsplash.com/featured/?#{@story.title}", alt: "Story Image", class: "story-image" %>
 <% else %>
   <%= image_tag "https://source.unsplash.com/collection/4656528/", alt: "Story Image", class: "story-image" %>
 <% end %>

@@ -1,15 +1,22 @@
-<h1>Edit Story</h1>
-<%= @story.title %>
+<div class="container__contents">
+  <section class="container__two-third-height">
+    <div class="photo-container">
+      <%= render 'shared/photos' %>
+    </div>
+  </section>
+    <%= simple_form_for(@story) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :title,
+                  required: true,
+                  input_html: { placeholder: "#{@story.title ? @story.title : 'Add a title'}" } %>
 
-<% if @story.photos.attached? %>
-  <% @story.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, alt: "Story Image" %>
-  <% end %>
-<% elsif @story.title %>
-  <%= image_tag "https://source.unsplash.com/300x300/?#{@story.title}", alt: "Story Image", width: 300 %>
-<% else %>
-  <%= image_tag "https://source.unsplash.com/collection/4656528/300x400", alt: "Story Image", width: 300 %>
-<% end %>
+      <%= f.button :submit, "save", class: 'button button__confirm' %>
+    <% end %>
+</div>
 
-<%= link_to "edit tagging", story_taggings_path(@story) %>
-<%= link_to "edit ratings", experience_story_path(@story) %>
+<footer>
+  <div class="button-container">
+    <%= link_to "edit tagging", story_taggings_path(@story), class: 'button button__confirm button__left' %>
+    <%= link_to "edit ratings", experience_story_path(@story), class: 'button button__confirm button__right' %>
+  </div>
+</footer>

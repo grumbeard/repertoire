@@ -170,6 +170,33 @@
 }
 
 
+// EDIT STORY
+.edit_story {
+  display: flex;
+  flex-direction: column;
+}
+
+.story_title {
+  width: 100%;
+  label {
+    display: none;
+  }
+  input {
+    width: 100%;
+    height: 4rem;
+    font-size: $large-font-size;
+    border-style: none;
+  }
+  input::placeholder {
+    color: $text-light;
+    padding-left: 1rem;
+  }
+  .btn {
+    padding-top: 1rem;
+  }
+}
+
+
 // RATINGS
 .ratings-grid {
   height: 100%;

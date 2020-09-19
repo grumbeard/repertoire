@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  before_action :set_story, only: [:show, :edit, :destroy, :experience, :pricing]
+  before_action :set_story, only: [:show, :edit, :update, :destroy, :experience, :pricing]
   before_action :set_experience_taggings, only: [:show]
   before_action :set_location_taggings, only: [:show]
   before_action :set_other_taggings, only: [:show]
@@ -32,6 +32,14 @@ class StoriesController < ApplicationController
       redirect_to story_path(@story)
     else
       render 'new'
+    end
+  end
+
+  def update
+    if @story.update(story_params)
+      redirect_to story_path(@story)
+    else
+      render edit_story_path(@story)
     end
   end
 
