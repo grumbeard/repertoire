@@ -11,8 +11,11 @@
 
   <body>
     <div class="container__full-height">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% flash.each do |type, msg| %>
+      <div class="<%= type %>">
+        <p><%= msg %></p>
+      </div>
+    <% end %>
       <%= yield %>
     </div>
   </body>

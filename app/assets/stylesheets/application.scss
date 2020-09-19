@@ -46,6 +46,23 @@ footer, .footer {
   width: 100%;
 }
 
+.notice, .alert {
+  border-radius: 4px;
+  width: 100%;
+  padding: 1rem 3rem;
+  text-align: center;
+}
+
+.notice {
+  background-color: $notice;
+  color: $notice-text;
+}
+
+.alert {
+  background-color: $alert;
+  color: $alert-text;
+}
+
 
 .container__full-height {
   height: 100vh;
