@@ -158,7 +158,7 @@
     background-size: cover;
     flex: 1;
   }
-  @media (min-width: #{$tablet-width}) {
+  @media (min-width: $tablet-width) {
     label {
       background-image: url($image-button-landscape)
     }
