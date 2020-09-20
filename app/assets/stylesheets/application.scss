@@ -99,7 +99,7 @@ footer, .footer {
     margin: 1rem 0;
     font-size: $small-font-size;
   }
-  input[type="text"], input[type="password"] {
+  input[type="text"], input[type="password"], input[type="email"] {
     font-size: $large-font-size;
   }
   .form-inputs {
@@ -121,7 +121,12 @@ footer, .footer {
   @include flexAndCenter(column);
 }
 
-.user_username, .user_password {
+.user_username,
+.user_password,
+.user_first_name,
+.user_last_name,
+.user_password_confirmation,
+.user_email {
   display: flex;
   flex-direction: column;
 }
