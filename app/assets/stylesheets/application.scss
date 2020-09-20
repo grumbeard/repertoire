@@ -89,3 +89,48 @@ footer, .footer {
   flex: 1;
   padding: 5% 0;
 }
+
+// LOGIN
+.new_user {
+  margin: 5% 0;
+  flex: 1;
+  @include flexAndCenter(column);
+  a {
+    margin: 1rem 0;
+    font-size: $small-font-size;
+  }
+  input[type="text"], input[type="password"] {
+    font-size: $large-font-size;
+  }
+  .form-inputs {
+    height: 100%;
+    width: 100%;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group {
+    margin: 5% 0;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.login-inputs-container {
+  flex: 1;
+  @include flexAndCenter(column);
+}
+
+.user_username, .user_password {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-links-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.user_remember_me {
+  border: none;
+}
