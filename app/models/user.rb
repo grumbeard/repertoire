@@ -6,10 +6,20 @@ class User < ApplicationRecord
   validates :username, uniqueness: { case_sensitive: false }
   validates :first_name, presence: true
 
+  # Recoverable Module only works as designed if email addresses are unique
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, authentication_keys: [:username]
 
   def email_required?
-    username.blank?
+    false
+  end
+
+  # Needed because of Recoverable module
+  def email_changed?
+    false
+  end
+
+  def will_save_change_to_email?
+    false
   end
 end
