@@ -7,6 +7,7 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.new
+    @tag.user = current_user
     @tag_category = TagCategory.find_by_id(params[:tag_category])
     @tag.tag_category = @tag_category
     if @tag.save
@@ -41,6 +42,6 @@ class TagsController < ApplicationController
   end
 
   def tag_params
-    params.require(:tag).permit(:name)
+    params.require(:tag).permit(:name, :user_id)
   end
 end

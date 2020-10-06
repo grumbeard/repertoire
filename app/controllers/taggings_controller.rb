@@ -11,7 +11,7 @@ class TaggingsController < ApplicationController
     @tagged_tag_names.concat(get_tag_names(@ambience_taggings))
     @tagged_tag_names.concat(get_tag_names(@location_taggings))
     @tagged_tag_names.concat(get_tag_names(@other_taggings))
-    @untagged = Tag.where.not(name: @tagged_tag_names)
+    @untagged = Tag.where(user: [current_user, nil]).where.not(name: @tagged_tag_names)
   end
 
   def destroy

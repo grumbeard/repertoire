@@ -11,6 +11,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, authentication_keys: [:username]
 
   has_many :stories, dependent: :destroy
+  has_many :tags, dependent: :destroy
 
   def email_required?
     false
