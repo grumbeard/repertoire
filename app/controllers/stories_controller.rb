@@ -1,5 +1,4 @@
 class StoriesController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_story, only: [:show, :edit, :update, :destroy, :experience, :pricing]
   before_action :set_experience_taggings, only: [:show]
   before_action :set_location_taggings, only: [:show]
