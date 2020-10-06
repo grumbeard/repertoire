@@ -1,4 +1,5 @@
 class StoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_story, only: [:show, :edit, :update, :destroy, :experience, :pricing]
   before_action :set_experience_taggings, only: [:show]
   before_action :set_location_taggings, only: [:show]
@@ -9,11 +10,12 @@ class StoriesController < ApplicationController
   end
 
   def index
-    @stories = Story.all
+    @stories = Story.where(user: current_user)
   end
 
   def create
     @story = Story.new(story_params)
+    @story.user = current_user
     address_details = []
     #Use Geocoder to autotag location info
     results = Geocoder.search([@story.latitude, @story.longitude])
@@ -58,6 +60,7 @@ class StoriesController < ApplicationController
 
   def story_params
     params.require(:story).permit(
+      :user_id,
       :title,
       :latitude,
       :longitude,
