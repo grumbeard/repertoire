@@ -1,17 +1,14 @@
 // GEOCODING
 
-const getLocation = ()=> {
-  const photo_upload_button = document.getElementById('story_photos');
-  if (photo_upload_button) {
-    photo_upload_button.addEventListener('click', () => {
-      console.log('Photo Upload Button clicked');
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(setLocation, displayError);
-      } else {
-        alert("Geolocation not supported by browser");
-      }
-    });
-  }
+const getLocation = () => {
+  photo_upload_button.addEventListener('click', () => {
+    console.log('Photo Upload Button clicked');
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(setLocation, displayError);
+    } else {
+      alert("Geolocation not supported by browser");
+    }
+  });
 }
 
 export { getLocation };
@@ -45,3 +42,6 @@ const displayError = (error) => {
 export { displayError };
 
 // PHOTO UPLOAD
+const getPhoto = () => {
+  const photo_upload
+}
