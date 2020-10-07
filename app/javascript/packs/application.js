@@ -19,7 +19,11 @@ require("channels")
 import { getLocation } from '../pages/story';
 import { setLocation } from '../pages/story';
 import { displayError } from '../pages/story';
+import { getPhotos } from '../pages/story';
 
 
 const photo_upload_button = document.getElementById('story_photos');
-if (photo_upload_button !== null) { getLocation(); }
+if (photo_upload_button !== null) {
+  getLocation(photo_upload_button);
+  getPhotos(photo_upload_button);
+}
